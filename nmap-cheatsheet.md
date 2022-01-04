@@ -11,5 +11,18 @@
 > - `nmap --exclude 192.168.1.1` - Excude listed host
 
 ---
-- Scan Techniques:
-> - `nmap 192.168.1.1 -sS` - TCP SYN port scan
+- Scans:
+> - `nmap -sP 10.7.1.0/24` : ping multiple ips at once
+> - `nmap -p <port(s)> <hostaddress` : scan specific ports
+> - `nmap -sT <host>` : TCP (full open) scan - using full 3 way handshake
+> - `nmap -sS -p <port(s)> <host>` - Stealthy scan (don't let TCP 3 way handshake complete to avoid getting caught.
+> - `nmap -O <host>` : OS Detection
+> - `nmap -A <host>`: OS Detection + Version Detection + Script Scanning + traceroute 
+> - `nmap -sV <host>` : Service version detection
+> - `nmap -D <decoy ip> <host>`: Add Decoy
+> - `nmap --script ssl-enum-ciphers -p <port> <host>` : Check SSL
+
+
+Foot notes:
+1. https://www.youtube.com/watch?v=4t4kBkMsDbQ
+
