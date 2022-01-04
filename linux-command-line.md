@@ -236,6 +236,62 @@ Pattern | Matches
 `[![:digit:]]*` | Any file not beginning with a numeral
 `*[[:lower:]123]` | Any file ending with a lowercase letter or the numerals 1, 2, or 3
 
+- `Wildcards can be used with any command that accepts filenames as arguments`
+
+---
+
+- `mkdir` - make directory
+    - `mkdir dir` - single directory
+    - `mkdir dir1 dir2 dir3` - multiple directories
+    
+    
+```
+┌──(shreyas㉿kali)-[~/practise]
+└─$ mkdir commandline
+                                                                                       
+┌──(shreyas㉿kali)-[~/practise]
+└─$ ls          
+commandline  hackthebox
+
+┌──(shreyas㉿kali)-[~/practise/commandline]
+└─$ mkdir dir1 dir2 dir3
+                                                                                       
+┌──(shreyas㉿kali)-[~/practise/commandline]
+└─$ ls
+dir1  dir2  dir3
+
+```
+---
+
+- `cp` - copy files and directories
+    - `cp item1 item2` : copy single file item1 into item2
+    - `cp item... directory` : copies multiple items (either files or directories) into a directory.
+
+Option | Meaning
+--- | ---
+`-a`,`--archive` | Copy the files and directories and all of their attributes, including ownerships and permissions.
+`-i`, `--interactive` | Before overwriting an existing file, prompt the user for confirmation. 
+`-r`, `--recursive` | Recursively copy directories and their contents. This option (or the -a option) is required when copying directories.
+`-u`, `--update` | When copying files from one directory to another, only copy files that either don’t exist or are newer than the existing corresponding files in the destination directory. This is useful when copying large numbers of files as it skips files that don’t need to be copied
+`-v`, `--verbose` | Display informative messages as the copy is performed.
+
+- `mv` is same as `cp`
+
+---
+
+- `rm file` : remove files and directories
 
 
+Option | Meaning
+--- | ---
+`-i`, `--interactive` | Before deleting an existing file, prompt the user for confirmation.
+`-r`, `--recursive` | Recursively delete directories. This means that if a directory being deleted has subdirectories, delete them too. To delete a directory, this option must be specified.
+`-f`, `--force` | Ignore nonexistent files and do not prompt. This overrides the --interactive option.
+`-v`, `--verbose` | Display informative messages as the deletion is performed.
+
+---
+
+- `ln` : create links
+    - `ln file link` : create a hard link
+    - `ln -s item link` : creates a symbolic link
 
