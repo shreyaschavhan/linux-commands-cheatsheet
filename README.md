@@ -55,5 +55,14 @@ Command | Usage
 `chown` | change file owner and group
 `chgrp` | change group ownership
 
+---
 
+> - cat a file with name "-" : `cat ./-` (./ - stands for current directory) 
+> - cat a file whose name starts with "-" : `cat ./-filename`
+> - cat a file name with spaces: `cat \spaces \in \this \filename.txt` (Original filename: `spaces in this filename.txt` )
+> - base64 decode a file: `base64 -d data.txt`
+> - output human readable text from non-humanreadable file: `strings filename`
+> - rotate a text with all lowercase and uppercase by 13 positions: `echo "acbdlksjfla KHLKJfdlsfasd" |  tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+> - connect a host with ssl encryption: `openssl s_client -connect <host>:<port>`
+> - check difference: `diff fileone filetwo`
 
