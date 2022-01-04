@@ -54,15 +54,22 @@ Command | Usage
 `chmod` | change file mode bits
 `chown` | change file owner and group
 `chgrp` | change group ownership
+`tail` | output the last part of files
+`ln` | make link between files
 
 ---
 
-> - cat a file with name "-" : `cat ./-` (./ - stands for current directory) 
-> - cat a file whose name starts with "-" : `cat ./-filename`
-> - cat a file name with spaces: `cat \spaces \in \this \filename.txt` (Original filename: `spaces in this filename.txt` )
-> - base64 decode a file: `base64 -d data.txt`
-> - output human readable text from non-humanreadable file: `strings filename`
-> - rotate a text with all lowercase and uppercase by 13 positions: `echo "acbdlksjfla KHLKJfdlsfasd" |  tr 'A-Za-z' 'N-ZA-Mn-za-m'`
-> - connect a host with ssl encryption: `openssl s_client -connect <host>:<port>`
-> - check difference: `diff fileone filetwo`
+> - `cat ./-` (./ - stands for current directory) : cat a file with name "-"
+> - `cat ./-filename` : cat a file whose name starts with "-" 
+> - `cat \spaces \in \this \filename.txt` (Original filename: `spaces in this filename.txt` ) - cat a file name with spaces
+> - `base64 -d data.txt` - base64 decode a file
+> - `strings filename` - output human readable text from non-humanreadable file: 
+> - `echo "acbdlksjfla KHLKJfdlsfasd" |  tr 'A-Za-z' 'N-ZA-Mn-za-m'` - rotate a text with all lowercase and uppercase by 13 positions: 
+> - `openssl s_client -connect <host>:<port>` : connect a host with ssl encryption
+> - `diff fileone filetwo` : check difference
+> - `tail -n <number of lines> <path & file name>` : print last n lines of a file
+> - `ln -s tmp/files/take-the-command-challenge take-the-command-challenge` : Create a symbolic link named take-the-command-challenge that points to the file tmp/files/take-the-command-challenge.
+> - `find . -delete` : Delete all of the files in this challenge directory including all subdirectories and their contents.
+> - `grep -rl 500`: `-r` for Recursive, read all files in given directory and subdirectories & `-l` for Print the name of each file which contains a match.
+> 
 
