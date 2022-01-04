@@ -703,13 +703,13 @@ Time's up
 
 Key | Action
 --- | ---
-CTRL-A | Move the cursor to the beginning of line
-CTRL-E | Move cursor to the end of the line
-CTRL-F | Move cursor forward one character; same as the right arrow key
-CTRL-B | Move cursor backward one character; same as the left arrow key
-ALT-F | Move cursor one word forward
-ALT-B | Move cursor backward one word
-CTRL-L | Clear screen and move the cursor to the top left corner. Same as `clear` command
+`CTRL-A` | Move the cursor to the beginning of line
+`CTRL-E` | Move cursor to the end of the line
+`CTRL-F` | Move cursor forward one character; same as the right arrow key
+`CTRL-B` | Move cursor backward one character; same as the left arrow key
+`ALT-F` | Move cursor one word forward
+`ALT-B` | Move cursor backward one word
+`CTRL-L` | Clear screen and move the cursor to the top left corner. Same as `clear` command
 
 ---
 - Modifying Text
@@ -717,11 +717,11 @@ CTRL-L | Clear screen and move the cursor to the top left corner. Same as `clear
 
 Key | Action
 --- | ---
-CTRL-D | Delete the character at the cursor location
-CTRL-T | Transpose the character at the cursor location
-ALT-T | Transpose the word at the cursor location with the one preceding it.
-ALT-L | Convert the characters from the cursor location to the end of the word to lowercase.
-ALT-U | Convert the characters from the cursor location to the end of the word to uppercase.
+`CTRL-D` | Delete the character at the cursor location
+`CTRL-T` | Transpose the character at the cursor location
+`ALT-T` | Transpose the word at the cursor location with the one preceding it.
+`ALT-L` | Convert the characters from the cursor location to the end of the word to lowercase.
+`ALT-U` | Convert the characters from the cursor location to the end of the word to uppercase.
 
 ---
 
@@ -736,6 +736,61 @@ Sequence | Action
 
 
 ---
+
+## 𝐏𝐞𝐫𝐦𝐢𝐬𝐬𝐢𝐨𝐧𝐬
+
+- `id` : Display user identity
+- `chmod` : Change a file’s mode
+- `umask` : Set the default file permissions
+- `su` : Run a shell as another user
+- `sudo` : Execute a command as another user
+- `chown`: Change a file’s owner
+- `chgrp`: Change a file’s group ownership
+- `passwd`: Change a user’s password
+
+- Permission attribute Examples:
+
+File Attributes | Meaning
+--- | ---
+`-rwx------` | A regular file that is readable, writable, and executable by the file’s owner. No one else has any access.
+`-rw-------` | A regular file that is readable and writable by the file’s owner. No one else has any access.
+`-rw-r--r--` | A regular file that is readable and writable by the file’s owner. Members of the file’s owner group may read the file. The file is world-readable.
+`-rwxr-xr-x` | A regular file that is readable, writable, and executable by the file’s owner. The file may be read and executed by everybody else.
+`-rw-rw----` | A regular file that is readable and writable by the file’s owner and members of the file’s group owner only.
+`lrwxrwxrwx` | A symbolic link. All symbolic links have “dummy” permissions. The real permissions are kept with the actual file pointed to by the symbolic link.
+`drwxrwx---` | A directory. The owner and the members of the owner group may enter the directory and create, rename, and remove files within the directory.
+`drwxr-x---` | A directory. The owner may enter the directory and create, rename, and delete files within the directory. Members of the owner group may enter the directory but cannot create, delete, or rename files.
+
+---
+
+- `chmod` : Change File Mode
+    - 6(rw-)
+    - 7(rwx)
+    - 5(r-x)
+    - 4(r--)
+    - 0(---)
+    
+Symbol | Meaning
+--- | ---
+`u` | Short for "user" but means the file or directory owner.
+`g` | Group owner
+`o` | Short for "others" but means world
+`a` | Short for "all". This is a combination of `u`, `g`, and `o`.
+
+- If no character is specified, “all” will be assumed. The operation may be a + indicating that a permission is to be added, a - indicating that a permission is to be taken away, or a = indicating that only the specified permissions are to be applied and that all others are to be removed.
+
+Notation | Meaning
+--- | ---
+`u+x` | Add execute permission for the owner.
+`u-x` | Remove execute permission from the owner.
+`+x` | Add execute permission for the owner, group, and world. This is equivalent to a+x.
+`o-rw` | Remove the read and write permissions from anyone besides the owner and group owner.
+`go=rw` | Set the group owner and anyone besides the owner to have read and write permissions. If either the group owner or the world previously had execute permission, it is removed.
+`u+x,go=rx` | Add execute permission for the owner and set the permissions for the group and others to read and execute. Multiple specifications may be separated by commas.
+
+
+
+
 
 
 
