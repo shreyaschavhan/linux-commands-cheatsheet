@@ -788,7 +788,18 @@ Notation | Meaning
 `go=rw` | Set the group owner and anyone besides the owner to have read and write permissions. If either the group owner or the world previously had execute permission, it is removed.
 `u+x,go=rx` | Add execute permission for the owner and set the permissions for the group and others to read and execute. Multiple specifications may be separated by commas.
 
+---
 
+## 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐞𝐬
+
+- `ps` : Report a snapshot of current processes
+- `top` : Display tasks
+- `jobs` : List active jobs
+- `bg` : Place a job in the background
+- `fg` : Place a job in the foreground
+- `kill` : Send a signal to a process
+- `killall` : Kill process by name
+- `shutdown` : Shut down or reboot the system
 
 
 
