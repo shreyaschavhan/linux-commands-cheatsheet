@@ -803,5 +803,271 @@ Notation | Meaning
 
 
 
+---
+
+## 𝐍𝐞𝐭𝐰𝐨𝐫𝐤𝐢𝐧𝐠
+
+- `ping` : Checks if a network is reachable, `ping` command sends a special network packet called an `ICMP ECHO_REQUEST` to a specified host. Most network devices receiving this packet will reply to it, allowing the network connection to be verified.
+
+```
+┌──(shreyas㉿kali)-[~]
+└─$ ping youtube.com   
+PING youtube.com (142.250.204.46) 56(84) bytes of data.
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=1 ttl=128 time=149 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=2 ttl=128 time=151 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=3 ttl=128 time=188 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=4 ttl=128 time=140 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=5 ttl=128 time=139 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=6 ttl=128 time=120 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=7 ttl=128 time=131 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=8 ttl=128 time=148 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=9 ttl=128 time=137 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=10 ttl=128 time=132 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=11 ttl=128 time=144 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=12 ttl=128 time=128 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=13 ttl=128 time=128 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=14 ttl=128 time=141 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=15 ttl=128 time=135 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=16 ttl=128 time=130 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=17 ttl=128 time=133 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=18 ttl=128 time=142 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=19 ttl=128 time=134 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=20 ttl=128 time=137 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=21 ttl=128 time=139 ms
+^C64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=22 ttl=128 time=140 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=23 ttl=128 time=121 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=24 ttl=128 time=146 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=25 ttl=128 time=136 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=26 ttl=128 time=165 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=27 ttl=128 time=176 ms
+64 bytes from hkg07s38-in-f14.1e100.net (142.250.204.46): icmp_seq=28 ttl=128 time=132 ms
+^C
+--- youtube.com ping statistics ---
+28 packets transmitted, 28 received, 0% packet loss, time 27045ms
+rtt min/avg/max/mdev = 120.372/140.817/187.758/14.526 ms
+                                                                    
+```
+
+---
+
+- `traceroute` : lists all the “hops” network traffic takes to get from the local system to a specified host.
+
+```
+┌──(shreyas㉿kali)-[~]
+└─$ traceroute google.com
+traceroute to google.com (142.250.204.110), 30 hops max, 60 byte packets
+ 1  192.168.29.2 (192.168.29.2)  0.227 ms  0.099 ms  0.175 ms
+ 2  * * *
+ 3  * * *
+ 4  * * *
+ 5  * * *
+ 6  * * *
+ 7  * * *
+ 8  * * *
+ 9  * * *
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+
+```
+
+---
+
+- `ip a` : It replaces the earlier and now deprecated `ifconfig` program. 
+
+```
+┌──(shreyas㉿kali)-[~]
+└─$ ip a    
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:0c:29:c5:88:a0 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.x.x/24 brd 192.168.x.x scope global dynamic noprefixroute eth0
+       valid_lft 1630sec preferred_lft 1630sec
+    inet6 fe80::20c:29ff:x:x/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+```
+
+---
+
+- `netstat` : The netstat program is used to examine various network settings and statistics.
+    - `-r` option will display the kernel’s network routing table
+    - `ie` : we can examine the network interfaces in our system
+
+```
+┌──(shreyas㉿kali)-[~]
+└─$ netstat -ie                   
+Kernel Interface table
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.x.x  netmask 255.255.255.0  broadcast 192.168.29.255
+        inet6 fe80::20c:29ff:x:x  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:c5:88:a0  txqueuelen 1000  (Ethernet)
+        RX packets 102  bytes 11285 (11.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 207  bytes 17053 (16.6 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8  bytes 400 (400.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 400 (400.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        
+                                                                                                       
+┌──(shreyas㉿kali)-[~]
+└─$ netstat -r 
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         192.168.29.2    0.0.0.0         UG        0 0          0 eth0
+192.168.29.0    0.0.0.0         255.255.255.0   U         0 0          0 eth0
+
+
+```
+
+---
+
+Transporting Files over a Network
+    
+- `ftp` : `ftp` is used to communicate with FTP servers, machines that contain files that can be uploaded and downloaded over a network. `FTP` (in its original form) is not secure because it sends account names and passwords in cleartext.
+
+```
+[me@linuxbox ~]$ ftp fileserver
+Connected to fileserver.localdomain.
+220 (vsFTPd 2.0.1)
+Name (fileserver:me): anonymous
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> cd pub/cd_images/ubuntu-18.04
+250 Directory successfully changed.
+ftp> ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+-rw-rw-r--    1 500      500      733079552 Apr 25 03:53 ubuntu-18.04-desktop-amd64.iso
+226 Directory send OK.
+ftp> lcd Desktop
+Local directory now /home/me/Desktop
+ftp> get ubuntu-18.04-desktop-amd64.iso
+local: ubuntu-18.04-desktop-amd64.iso remote: ubuntu-18.04-desktop-amd64.iso
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for ubuntu-18.04-desktop-amd64.iso (733079552 bytes).
+226 File send OK.
+733079552 bytes received in 68.56 secs (10441.5 kB/s)
+ftp> bye
+```
+
+Command | Meaning
+--- | ---
+`ftp fileserver` | Invoke the `ftp` program and have it connect the FTP server `fileserver`
+`anonymous` | Login name. After the login prompt, a password prompt will appear. Some servers will accept a blank password; others will require a password in the form of an email address. In that case, try something like user@example.
+`cd` | change directory
+`ls` | list directory
+`lcd Desktop` | Change the directory on the local system to ~/Desktop. In the example, the ftp program was invoked when the working directory was ~. This command changes the working directory to ~/Desktop.
+`get` | transfer file from remote server to local system
+`bye` | Log off the remote server and end the ftp program session. The commands quit and exit may also be used.
+
+- `lftp` is a Better ftp
+
+---
+
+- `wget` : It is useful for downloading content from both web and FTP sites. Single files, multiple files, and even entire sites can be downloaded. 
+
+```
+[me@linuxbox ~]$ wget http://linuxcommand.org/index.php
+--11:02:51--  http://linuxcommand.org/index.php
+           => `index.php'
+Resolving linuxcommand.org... 66.35.250.210
+Connecting to linuxcommand.org|66.35.250.210|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    [ <=>                                 ] 3,120         --.--K/s
+
+11:02:51 (161.75 MB/s) - `index.php' saved [3120]
+```
+
+---
+
+- `ssh` : SSH solves the two basic problems of secure communication with a remote host.
+    - It authenticates that the remote host is who it says it is (thus preventing so-called man-in-the-middle attacks).
+    - It encrypts all of the communications between the local and remote hosts.
+    - `ssh remote-sys` : To connect to a remote host named remote-sys
+    - `ssh username@remote-sys` : login with specific username
+    - `ssh remote-sys <command>`: to execute just a single command
+
+
+
+```
+[me@linuxbox ~]$ ssh remote-sys
+The authenticity of host 'remote-sys (192.168.1.4)' can't be established.
+RSA key fingerprint is 41:ed:7a:df:23:19:bf:3c:a5:17:bc:61:b3:7f:d9:bb.
+Are you sure you want to continue connecting (yes/no)?
+```
+
+---
+
+- `scp` - (secure copy). copy files from local host to remote host
+
+```
+[me@linuxbox ~]$ scp remote-sys:document.txt .
+me@remote-sys's password:
+document.txt                           100% 5581     5.5KB/s   00:00
+[me@linuxbox ~]$
+```
+
+- `sftp` : SSH file-copying program
+
+```
+[me@linuxbox ~]$ sftp remote-sys
+Connecting to remote-sys...
+me@remote-sys's password:
+sftp> ls
+ubuntu-8.04-desktop-i386.iso
+sftp> lcd Desktop
+sftp> get ubuntu-8.04-desktop-i386.iso
+Fetching /home/me/ubuntu-8.04-desktop-i386.iso to ubuntu-8.04-desktop-i386.iso
+/home/me/ubuntu-8.04-desktop-i386.iso 100%  699MB   7.4MB/s   01:35
+sftp> bye
+```
+
+---
+
+
+## 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠 𝐟𝐨𝐫 𝐟𝐢𝐥𝐞𝐬
+
+- `locate` : Find files by name
+- `find` : Search for files in a directory hierarchy
+- `xargs ` : Build and execute command lines from standard input
+- `touch` : Change file times
+- `stat`: Display file or file system status
+
+---
+
+- `find` : find files the hard way
+    - `find ~` : to produce a listing of our home directory
+    - `find ~ | wc -l` : to count the number of files.
+    - `find ~ -type d | wc -l` : `-type d` limit the search to directories
+    - `find ~ -type f | wc -l` : `-type f` limit the search to regular files 
+    - `find ~ -type f -name "*.JPG" -size +1M | wc -l`: all the regular files that match the wildcard pattern *.JPG and are larger than one megabyte
+
+File type | Description
+--- | ---
+`b` | Block special device file
+`c` | Character special device file
+`d` | Directory
+`f` | Regular file
+`l` | Symbolic link
+
 
 
