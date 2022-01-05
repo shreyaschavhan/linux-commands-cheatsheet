@@ -1070,4 +1070,35 @@ File type | Description
 `l` | Symbolic link
 
 
+- find size units
+
+Character | Unit
+--- | ---
+`b` | 512-byte blocks. This is default if no unit is specified.
+`c` | Bytes
+`w` | 2-byte words
+`k` | Kilobytes (units of 1,024 bytes)
+`M` | Megabytes (units of 1,048,576 bytes)
+`c` | Gigabytes (units of 1,073,741,824 bytes)
+
+- More about `find` options: [Find cheatsheet](https://github.com/shreyaschavhan/linux-commands-cheatsheet/blob/main/find-cheatsheet.md)
+
+---
+
+- `xargs` -  It accepts input from standard input and converts it into an argument list for a specified command
+
+```
+find ~ -type f -name 'foo*' -print | xargs ls -l
+-rwxr-xr-x 1 me   me 224 2007-10-29 18:44 /home/me/bin/foo
+-rw-r--r-- 1 me   me   0 2016-09-19 12:53 /home/me/foo.txt
+```
+
+---
+
+Remaining:
+- archiving and backup
+- regular expressions
+- text processing
+- compiling programs
+
 
