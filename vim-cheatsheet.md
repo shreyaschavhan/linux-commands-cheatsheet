@@ -57,5 +57,43 @@ Key | Moves the cursor
 `G` | To the last line of the file.
 
 
+- `u` : undo the last change that you made.
+- `a` : append text at the end of the line.
+- `o` : Insert line below the current line.
+- `O` : Insert line above the current line.
+- `x` : will delete a character at the cursor location.
 
+Command | Deletes
+--- | ---
+`x` | The current character
+`3x` | The current character and the next two characters
+`dd` | The current line
+`5dd` | The current line and the next four lines
+`dW` | From the current cursor position to the beginning of the next word
+`d$` | From the current cursor location to the end of the current line
+`d0` | From the current cursor location to the beginning of the line
+`d^` | From the current cursor location to the first non-whitespace character in the line.
+`dG` | From the current line to the end of the file
+`d20G` | From the current line to the twentieth line of the file
+
+- `y`: is used to yank (copy) text
+- `d`: cut the text
+- `p`: paste the contents
+
+Command | Copies
+---|---
+`yy` | The current line
+`5yy` | The current line and the next four lines
+`yW` | From the current cursor position to the beginning of the next word
+`y$` | From the current cursor location to the end of the current line
+`y0` | From the current cursor location to the beginning of the line
+`y^` | From the current cursor location to the first non-whitespace character in the line
+`yG` | From the current line to the end of the file
+`y20G` | From the current line to the twentieth line of the file.
+
+- `J (capital j)`: to join lines
+- `f`: search within a line
+- `/Line`: search within a file
+- `:%s/Line/line/g`: global search and replace
+- 
 
