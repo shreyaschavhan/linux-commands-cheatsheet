@@ -1,5 +1,7 @@
 # ⁍ 𝐋𝐢𝐧𝐮𝐱 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐂𝐡𝐞𝐚𝐭𝐬𝐡𝐞𝐞𝐭
 
+- `gnome-control-center` : open system settings from terminal
+
 Command | Usage 
 :-: | ---
 `ssh` | ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote machine.  
