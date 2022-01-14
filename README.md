@@ -1,6 +1,7 @@
 # ⁍ 𝐋𝐢𝐧𝐮𝐱 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐂𝐡𝐞𝐚𝐭𝐬𝐡𝐞𝐞𝐭
 
 - `gnome-control-center` : open system settings from terminal
+- `xclip -selection clipboard` : to copy output directly to clipboard
 
 Command | Usage 
 :-: | ---
