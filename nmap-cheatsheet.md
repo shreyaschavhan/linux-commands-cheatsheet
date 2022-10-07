@@ -26,3 +26,17 @@
 Foot notes:
 1. https://www.youtube.com/watch?v=4t4kBkMsDbQ
 
+---
+
+## Updates:
+
+- By [Marv](https://www.reddit.com/user/MrK_GER/) 
+- Suggestion: [here](https://www.reddit.com/r/oscp/comments/xwgmal/comment/irb9jnz/?utm_source=share&utm_medium=web2x&context=3)
+```
+nmap -sV -Sc -oA nmap/ <hostip>
+```
+```
+-sV ==> Version detection
+-sC ==> Run default scripts
+-oA ==> Save the output in all formats
+```
