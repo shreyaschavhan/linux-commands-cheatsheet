@@ -1,3 +1,5 @@
+![visitor badge](https://visitor-badge.glitch.me/badge?page_id=shreyaschavhan.linux-commands-cheatsheet&left_text=Views)
+
 # ⁍ 𝐋𝐢𝐧𝐮𝐱 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐂𝐡𝐞𝐚𝐭𝐬𝐡𝐞𝐞𝐭
 
 - `gnome-control-center` : open system settings from terminal
